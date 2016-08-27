@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0 ;padding: 0;}
+	.container{width: 500px;height: 400px;margin: 0 auto;}
+	.mode{width: 500px;margin: 0 auto;}
+	.mode span{display: inline-block;width: 50px;height: 50px;margin-left: 10px}
+	.red{background-color: red;}
+	.orange{background-color: orange;}
+	.blue{background-color: blue;}
+	.black{background-color: black;}
+	.color{float: left;}
+	.size{float: left;}
+	.mode .small{background-color: black;border-radius: 50%;height: 20px;width: 20px}
+	.mode .middle{background-color: black;border-radius: 50%;height: 30px;width: 30px}
+	.mode .large{background-color: black;border-radius: 50%;height: 40px;width: 40px}
+	</style>
+</head>
+<body>
+	<div class="container">	
+	<canvas id="cvs" width="500" height="400"></canvas>
+	</div>
+	<div class="mode">
+	<div class="color"id="color">
+		<span class="red"></span>
+		<span class="orange"></span>
+		<span class="blue"></span>
+		<span class="black"></span>
+	</div>
+	<div class="size"id="size">
+		<span class="small" dataSize="1"></span>
+		<span class="middle" dataSize="5"></span>
+		<span class="large" dataSize="10"></span>
+	</div>
+		<button type="button"id="btn">清除</button>
+		<button></button>
+	</div>
