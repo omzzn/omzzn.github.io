@@ -55,6 +55,7 @@ function drawScene() { // main drawScene function
     ctx.arc(oBall.x, oBall.y, oBall.r, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.fill();
+    console.log(oBall)
     if (bRightBut)
         oPadd.x += 5;
     else if (bLeftBut)
