@@ -1,93 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-	*{margin: 0 ;padding: 0;}
-	.container{width: 800px;height: 400px;margin: 0 auto;}
-	.mode{width: 500px;margin: 0 auto;}
-	.mode span{display: inline-block;width: 50px;height: 50px;margin-left: 10px}
-	.red{background-color: red;}
-	.orange{background-color: orange;}
-	.blue{background-color: blue;}
-	.black{background-color: black;}
-	.color{float: left;}
-	.size{float: left;}
-	.mode .small{background-color: black;border-radius: 50%;height: 20px;width: 20px}
-	.mode .middle{background-color: black;border-radius: 50%;height: 30px;width: 30px}
-	.mode .large{background-color: black;border-radius: 50%;height: 40px;width: 40px}
-	</style>
+<meta charset="utf-8" />
+<title>砖块</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.5.2.min.js"></script>
+<script src="js/script.js"></script>
 </head>
 <body>
-	<h1>画图</h1>
-	<div class="container">	
-	<canvas id="cvs" width="800" height="400"></canvas>
-	</div>
-	<div class="mode">
-	<div class="color"id="color">
-		<span class="red"></span>
-		<span class="orange"></span>
-		<span class="blue"></span>
-		<span class="black"></span>
-	</div>
-	<div class="size"id="size">
-		<span class="small" dataSize="1"></span>
-		<span class="middle" dataSize="5"></span>
-		<span class="large" dataSize="10"></span>
-	</div>
-		<button type="button"id="btn">清除</button>
-		<button></button>
-	</div>
-	<script>
 
-	function G (sId) {
-		return document.getElementById(sId)
-	}
-	var cvs=G('cvs');
-	var btn=G('btn');
-	var ctx=cvs.getContext('2d');
-	var color=G('color');
-	var colors=color.getElementsByTagName('span');
-	var size=G('size');
-	var sizes=size.getElementsByTagName('span');
-	for(var i =0;i<colors.length;i++){
-			
-		colors[i].onclick=function(){
-			
-			ctx.strokeStyle=this.className
-		}
-	}
-	for(var i in sizes){
-		sizes[i].onclick=function(){
-			ctx.lineWidth=Number(this.getAttribute('dataSize'))
-			
-		}
-	}
-	btn.onclick=function(){
-		ctx.clearRect(0,0,500,400)
-	}
-	start=false
-	cvs.onmousedown=function(event){
-		 x=event.offsetX;
-		 y=event.offsetY;
-		ctx.beginPath();
-		ctx.moveTo(x,y);
-		start=true;
-	}
-	cvs.onmousemove=function(){
+<div class="container">
+	<canvas id="scene" width="800" height="600"></canvas>
+</div>
+<div style="text-align:center;">
+</div>
 
-		if(start){
-		 x=event.offsetX;
-		 y=event.offsetY;
-		ctx.lineTo(x,y);
-		ctx.stroke();
-		}
-	}
-	cvs.onmouseup=function(){
-		ctx.closePath();
-		start=false
-	}
-	</script>
 </body>
 </html>

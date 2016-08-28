@@ -1,2 +1,0 @@
-# omzzn.github.io
-
